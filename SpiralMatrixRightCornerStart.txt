@@ -1,0 +1,73 @@
+function spiralRightMatrix(n) {
+    // 'use strict';
+
+    let final = n * n;
+    let size = n;
+    let row = 0;
+    let col = n - 1;
+    let step = 0;
+    let matrix = Array.from({ length: n });
+    while (size) matrix[--size] = [];
+
+    // console.log(matrix);
+
+
+    for (let i = 0; i <= final;) {
+
+        while (row <= n - 1 - step) {
+            i += 1;
+            matrix[row][col] = i;
+            row += 1;
+
+        }
+        col -= 1;
+        row -= 1;
+        // console.log(matrix);
+        while (col >= step) {
+            i += 1;
+            matrix[row][col] = i;
+            col -= 1;
+
+        }
+        row -= 1;
+        col += 1;
+        // console.log(matrix);
+        while (row >= step) {
+            i += 1;
+            matrix[row][col] = i;
+            row -= 1;
+
+        }
+        col += 1;
+        row += 1;
+        step += 1;
+
+        while (col <= n - 1 - step) {
+            i += 1;
+            matrix[row][col] = i;
+            col += 1;
+            // console.log(matrix);
+
+        }
+        // row += 1;
+        col -= 1;
+        row += 1;
+        // console.log(matrix);
+        let checkMatrix = 0;
+        for (let el of matrix) {
+            for (x of el) {
+                if (x !== undefined) {
+                    checkMatrix += 1
+                }
+            }
+        }
+        // console.log(checkMatrix);
+        if (checkMatrix == final) {
+            break;
+        }
+    }
+
+    console.log(matrix);
+
+}
+spiralRightMatrix(5)
