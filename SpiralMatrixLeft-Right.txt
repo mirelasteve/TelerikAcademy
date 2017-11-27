@@ -1,0 +1,58 @@
+function spiralMatrix(n) {
+    'use strict';
+    let dirRow = [0, +1, 0, -1];
+    let dirCol = [+1, 0, -1, 0];
+    let number = n;
+    let final = n * n;
+    let y = n;
+    let row = 0;
+    let col = 0;
+    let step = 0;
+    let matrix = Array.from({ length: number });
+    while (y) matrix[--y] = [];
+
+    // console.log(matrix);
+
+
+    for (let i = 0; i < final;) {
+
+        while (col + step < n) {
+            i += 1;
+            matrix[row][col] = i;
+            col += 1;
+
+        }
+        col -= 1;
+        row += 1;
+        while (row + step < n) {
+            i += 1;
+            matrix[row][col] = i;
+            row += 1;
+
+        }
+        row -= 1;
+        col -= 1;
+        while (col >= step) {
+            i += 1;
+            matrix[row][col] = i;
+            col -= 1;
+
+        }
+        col += 1;
+        row -= 1;
+        step += 1;
+
+        while (row >= step) {
+            i += 1;
+            matrix[row][col] = i;
+            row -= 1;
+
+        }
+        row += 1;
+        col += 1;
+    }
+
+    console.log(matrix);
+
+}
+spiralMatrix(4)
