@@ -1,0 +1,11 @@
+const n= +gets();
+ 
+  
+    for (let i = 0; i < n; i += 1) {
+          let arr=gets().split(' ');
+          let result=0;
+          for(let j of arr){
+          result+=j*1;
+          }
+        print(result);
+    }

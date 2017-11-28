@@ -1,0 +1,4 @@
+const number = +gets();
+for (let i = 0; i < number; i += 1) {
+    print(i * 5);
+}
