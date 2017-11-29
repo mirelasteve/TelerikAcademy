@@ -1,0 +1,23 @@
+const N = +gets();
+let arr=[];
+
+ for(let i=0;i<N;i+=1){
+     arr[i]=+gets();
+     }
+
+    let counter = 0;
+    let maxCounter = 0;
+    for (let i = 0; i < N; i+=1) {
+        if (arr[i] == arr[i + 1]) {
+            counter += 1;
+        }
+        if (arr[i] != arr[i + 1]) {
+            if (maxCounter < counter) {
+                maxCounter = counter;
+                counter = 0;
+            }
+            counter = 0;
+        }
+            }
+    maxCounter += 1;
+    print(maxCounter);
