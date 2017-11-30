@@ -1,3 +1,36 @@
+// bgcoder
+function solve(arg){
+  let number=arg[0];
+  let arr=[];
+let counter=0;
+let maxC=0;
+for(let i=number-1; i>=0;i-=1){
+    arr[i]=args[i];
+    }
+  
+for (let i = number - 1; i >= 1; i -= 1) {
+
+    if (arr[i] - arr[i - 1] >= 1) {
+        counter += 1;
+
+    }
+    if ((arr[i] - arr[i - 1]) < 1) {
+        counter += 1;
+        if (maxC < counter) {
+            maxC = counter;
+            counter = 0;
+        }
+        if (maxC >= counter) {
+            counter = 0;
+        }
+    }
+
+}
+console.log(maxC);
+}
+
+
+// judge system
 const N = +gets();
 let arr=[];
 
