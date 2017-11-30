@@ -1,0 +1,18 @@
+const number=+gets();
+let arr=[];
+
+for(let i=number-1; i>=0;i-=1){
+    arr[i]=+gets();
+    }
+    let sum = 0;
+let maxSum = 0;
+for (let i = 0; i < arr.length; i += 1) {
+    sum = arr[i];
+    for (j = i + 1; j < arr.length; j += 1) {
+        sum += arr[j];
+        if (maxSum < sum) {
+            maxSum = sum;
+        }
+    }
+}
+print(maxSum);
