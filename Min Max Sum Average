@@ -1,0 +1,32 @@
+/*
+Write a program that reads from the console a sequence of N real numbers and returns the minimal, 
+the maximal number, the sum and the average of all numbers (displayed with 2 digits after the decimal point).
+
+    The input starts by the number N (alone in a line) followed by N lines, each holding an real number.
+    The output is like in the examples below.
+
+*/
+
+
+let n = +gets();
+let arr = [];
+let sum = 0;
+let min, max;
+for (let i = 0; i < n; i += 1) {
+    arr[i] = +gets();
+    sum += arr[i];
+}
+min = arr[0];
+max = arr[0];
+for (let i = 0; i < n; i += 1) {
+    if (min > arr[i]) {
+        min = arr[i];
+    }
+    if (max < arr[i]) {
+        max = arr[i];
+    }
+}
+print('min=' + min.toFixed(2));
+print('max=' + max.toFixed(2));
+print('sum=' + sum.toFixed(2));
+print('avg=' + (sum / n).toFixed(2));
