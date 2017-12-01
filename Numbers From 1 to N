@@ -1,0 +1,11 @@
+/*Write a program that enters from the console
+a positive integer n and prints all 
+the numbers from 1 to N inclusive, on a single line, separated by a whitespace.*/
+
+let x = +gets();
+let str = '';
+for (let i = 1; i <= x; i += 1) {
+    str += i + ' ';
+}
+str.trim();
+print(str);
