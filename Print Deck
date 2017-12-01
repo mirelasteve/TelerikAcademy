@@ -1,0 +1,46 @@
+/*
+Write a program that reads a card sign(as a string) from the console and generates and 
+prints all possible cards from a standard deck of 52 cards up to the card with the given sign(without the jokers). 
+The cards should be printed using the classical notation (like 5 of spades, A of hearts, 9 of clubs; and K of diamonds).
+
+    The card faces should start from 2 to A(10 is 10).
+    Print each card face in its four possible suits: clubs, diamonds, hearts and spades.
+
+*/
+
+
+let n = gets();
+const createCard = (m) => {
+    for (let i = 2; i <= m; i += 1) {
+        print(i + ' of spades, ' + i + ' of clubs, ' + i + ' of hearts, ' + i + ' of diamonds');
+    }
+}
+if (n >= 2 && n <= 9) {
+    createCard(n)
+}
+if (n == 10) {
+    n = +n;
+    createCard(10)
+}
+if (n == 'J') {
+    createCard(10);
+    print('J of spades, ' + 'J of clubs, ' + 'J of hearts, ' + 'J of diamonds');
+}
+if (n == 'Q') {
+    createCard(10);
+    print('J of spades, ' + 'J of clubs, ' + 'J of hearts, ' + 'J of diamonds');
+    print('Q of spades, ' + 'Q of clubs, ' + 'Q of hearts, ' + 'Q of diamonds');
+}
+if (n == 'K') {
+    createCard(10);
+    print('J of spades, ' + 'J of clubs, ' + 'J of hearts, ' + 'J of diamonds');
+    print('Q of spades, ' + 'Q of clubs, ' + 'Q of hearts, ' + 'Q of diamonds');
+    print('K of spades, ' + 'K of clubs, ' + 'K of hearts, ' + 'K of diamonds');
+}
+if (n == 'A') {
+    createCard(10);
+    print('J of spades, ' + 'J of clubs, ' + 'J of hearts, ' + 'J of diamonds');
+    print('Q of spades, ' + 'Q of clubs, ' + 'Q of hearts, ' + 'Q of diamonds');
+    print('K of spades, ' + 'K of clubs, ' + 'K of hearts, ' + 'K of diamonds');
+    print('A of spades, ' + 'A of clubs, ' + 'A of hearts, ' + 'A of diamonds');
+}
