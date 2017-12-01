@@ -1,0 +1,54 @@
+/*Write a program that reads
+a rectangular matrix of size N x M and finds in
+it the square 3 x 3 that has maximal sum of its elements.
+Print that sum.*/
+
+let datas = gets().split(' ');
+let rows = +datas[0];
+let cols = +datas[1];
+let size = cols;
+let arr = Array.from({ length: rows });
+let d = [];
+while (size) arr[--size] = [];
+for (let i = 0; i < rows; i += 1) {
+ arr[i] = gets().split(' ');
+}
+let col;
+let row;
+let startRow = 0;
+let startCol = 0;
+let j = 0;
+let globalSums = [];
+let stop = 2;
+let stopCol = 2;
+let sum = 0;
+while (globalSums.length <= (rows - 2) * (cols - 2)) {
+    if (startRow < rows - 2) {
+        for (row = startRow; row <= stop; row += 1) {
+            for (col = startCol; col <= stopCol; col += 1) {
+                sum += +arr[row][col];
+             
+            }
+}
+    }
+       globalSums.push(sum);
+
+
+    sum = 0;
+    startRow += 1;
+    stop += 1;
+    if (startRow > rows - 2 && startCol <= cols - 2) {
+        startRow = 0;
+        startCol = col - 2;
+        stop = startRow + 2;
+        stopCol = startCol + 2;
+
+    }
+
+}
+
+globalSums = globalSums.filter((x) => x != 0)
+globalSums.sort((x, y) => x > y);
+
+print(globalSums[globalSums.length - 1]);
+quit(0);
