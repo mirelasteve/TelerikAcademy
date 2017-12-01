@@ -1,0 +1,10 @@
+let x = gets();
+let result = 0;
+let i = x.length - 1;
+let k = 0;
+while (i >= 0) {
+    result += 2 ** k * x[i];
+    i -= 1;
+    k += 1;
+}
+print(result);
