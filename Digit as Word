@@ -1,0 +1,17 @@
+/*Write a program that read a digit [0-9] from the console,
+and depending on the input, shows the digit as a word (in English).
+
+    Print "not a digit" in case of invalid input.
+    Use a switch statement.
+*/
+
+const digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', ]
+let x = gets();
+if (x.length > 1) {
+    print('not a digit');
+} else if (x < 0 || x > 9 || isNaN(x)) {
+    print('not a digit');
+} else if (x >= 0 && x <= 9) {
+    print(digits[x]);
+}
+quit();
