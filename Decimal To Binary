@@ -1,0 +1,14 @@
+let decimal = gets();
+let rem;
+let ost = [];
+if (decimal == 0) {
+    print('0');
+} else if (decimal != 0) {
+    while (decimal >= 1) {
+        rem = decimal % 2;
+        decimal = parseInt(decimal / 2);
+        ost.push(rem);
+    }
+    let result = ost.reverse().join('');
+    print(result);
+}
