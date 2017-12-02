@@ -1,0 +1,26 @@
+/*
+Write a program that reads from the console a positive integer number N and prints a matrix like in the examples below.
+Use two nested loops.
+
+1 2 3 4
+2 3 4 5
+3 4 5 6
+4 5 6 7
+
+    _Challenge: achieve the same effect without nested loops_
+
+*/
+
+let n = +gets();
+let m = n * n;
+let one = 1;
+let result = '';
+while (m) {
+    for (let i = one; i <= one + (n - 1); i += 1) {
+        result += i + ' ';
+    }
+    result += '\n';
+    one += 1;
+    m = m - n;
+}
+print(result.trim());
