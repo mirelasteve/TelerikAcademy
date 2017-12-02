@@ -1,0 +1,10 @@
+/* Write a program that finds the biggest of 5 numbers that are read from the console, using only 5 if statements.*/
+
+let arr = [];
+arr[0] = +gets();
+arr[1] = +gets();
+arr[2] = +gets();
+arr[3] = +gets();
+arr[4] = +gets();
+arr.sort((x, y) => y - x);
+print(arr[0]);
