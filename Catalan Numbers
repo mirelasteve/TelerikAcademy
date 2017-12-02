@@ -1,0 +1,17 @@
+/* In combinatorics, the Catalan numbers are calculated by the following formula: catalan-formula
+
+    Write a program to calculate the Nth Catalan number by given N
+*/
+let print = this.print || console.log
+let n = +gets();
+const fact = (m) => {
+    if (m == 0 || m == 1) {
+        return 1;
+    }
+    return m * fact(m - 1);
+}
+
+let twoN = fact(2 * n);
+let nMinus = fact(n + 1);
+let Cn = twoN / ((nMinus) * fact(n));
+print(Math.round(Cn));
