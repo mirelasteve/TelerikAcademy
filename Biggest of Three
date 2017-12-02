@@ -1,0 +1,6 @@
+let arr = [];
+arr[0] = +gets();
+arr[1] = +gets();
+arr[2] = +gets();
+arr.sort((x, y) => y - x);
+print(arr[0]);
