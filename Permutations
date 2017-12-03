@@ -1,0 +1,27 @@
+let n = +gets();
+let arr = [];
+for (let i = 1; i <= n; i += 1) {
+    arr.push(i);
+}
+
+const permutation = (a) => {
+
+    let res = [];
+    for (let i = 0; i < a.length; i++) {
+        let restA = a.slice(0, i).concat(a.slice(i + 1));
+        let rest = permutation(restA);
+        if (rest.length === 0) {
+            res.push([a[i]]);
+        } else {
+            for (let j = 0; j < rest.length; j++) {
+                res.push([a[i]].concat(rest[j]));
+            }
+        }
+    }
+
+    return res;
+}
+let result = permutation(arr);
+for (i = 0; i < result.length; i += 1) {
+    print((result[i].join(' ')));
+}
