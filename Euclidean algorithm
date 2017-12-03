@@ -1,0 +1,19 @@
+let input = gets();
+input = input.split(' ');
+let first = input[0];
+let second = input[1];
+let divisor;
+const euclid = (a, b) => {
+    while (b != 0) {
+        divisor = b;
+        b = a % b;
+        a = divisor;
+    }
+    return a;
+}
+if (first < second) {
+    print(euclid(second, first));
+}
+if (second < first) {
+    print(euclid(first, second));
+}
