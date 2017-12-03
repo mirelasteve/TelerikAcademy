@@ -1,0 +1,80 @@
+let field = (gets()).split('');
+let path = (gets()).split(' ');
+let counterSoul = 0;
+let counterFood = 0;
+let counterLock = 0;
+let symbol = field[0];
+
+let index = 0;
+for (let i = 0; i <= path.length; i += 1) {
+
+    if (symbol != 0) {
+        if (symbol == '@') {
+            counterSoul += 1;
+            field[index] = 0;
+        }
+        if (symbol == '*') {
+            counterFood += 1;
+            field[index] = 0;
+        }
+        if (symbol == 'x') {
+            if (index % 2 == 0) {
+                if (counterSoul <= 0) {
+                    print(`You are deadlocked, you greedy kitty!\nJumps before deadlock: ` + counterLock);
+                    break;
+                }
+                if (counterSoul > 0) {
+                    counterSoul -= 1;
+                    field[index] = 0;
+                    counterLock += 1;
+                }
+
+            }
+            if (index % 2 == 1) {
+                if (counterFood < 0) {
+
+                    break;
+                }
+                if (counterFood > 0) {
+                    counterFood -= 1;
+                    field[index] = 0;
+                    counterLock += 1;
+                }
+
+            }
+        }
+        index += +path[i];
+        if (index < 0) {
+            index = field.length + index;
+            symbol = (field.slice(index, index + 1)).toString();
+        } else if (index >= path.length) {
+            index = field.length - path[i];
+            symbol = (field.slice(index, index + 1)).toString();
+        } else {
+            symbol = (field.slice(index, index + 1)).toString();
+        }
+    } else {
+        index += +path[i];
+        if (index < 0) {
+            index = field.length + index;
+            symbol = (field.slice(index, index + 1)).toString();
+        } else if (index >= path.length) {
+            index = field.length - path[i];
+            symbol = (field.slice(index, index + 1)).toString();
+        } else {
+            symbol = (field.slice(index, index + 1)).toString();
+        }
+        continue;
+    }
+    if (i >= path.length) {
+        print('Coder souls collected: ' + counterSoul);
+        print('Food collected: ' + counterFood);
+        print('Deadlocks: ' + counterLock);
+        break;
+    }
+    if (index < 0) {
+        index = field.length + index;
+    }
+
+}
+quit(0);
