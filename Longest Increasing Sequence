@@ -1,0 +1,24 @@
+const number = +gets();
+let arr = [];
+let counter = 1;
+let maxC = 0;
+for (let i = number - 1; i >= 0; i -= 1) {
+    arr.push(+gets());
+}
+
+for (let i = 0; i < arr.length - 1; i += 1) {
+    if (arr[i] < arr[i + 1]) {
+        counter += 1;
+        
+    }
+    if (arr[i] >= arr[i + 1]) {
+        if (maxC < counter) {
+            maxC = counter;
+            counter = 1;
+        }
+        if (maxC >= counter) {
+            counter = 1;
+        }
+    }
+}
+print(maxC);
