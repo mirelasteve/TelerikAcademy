@@ -1,0 +1,21 @@
+
+/*You are given N integers (given in a single line, separated by a space).
+
+    Write a program that checks whether the product of the odd elements is equal to the product of the even elements.
+    Elements are counted from 1 to N, so the first element is odd, the second is even, etc*/
+
+let n = +gets();
+let pOdd = 1;
+let pEven = 1;
+let numbers = gets().split(' ');
+for (let i = 0; i < n; i += 2) {
+    pOdd *= numbers[i];
+    if (numbers[i + 1]) {
+        pEven *= numbers[i + 1];
+    }
+}
+if (pOdd == pEven) {
+    print('yes ' + pOdd)
+} else {
+    print('no ' + pOdd + ' ' + pEven);
+}
