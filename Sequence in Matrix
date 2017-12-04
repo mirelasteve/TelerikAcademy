@@ -1,0 +1,58 @@
+/*
+We are given a matrix of strings of size N x M. Sequences in the matrix we define
+as sets of several neighbour elements located on the same line, column or diagonal.
+Write a program that finds the longest sequence of equal strings in the matrix and prints its length.
+*/
+
+const datas = (gets()).split(' ');
+const n = datas[0] * 1;
+const m = datas[1] * 1;
+let size = m;
+let row,
+    col;
+let matrix = Array.from({ length: n });
+while (size) {
+    matrix[--size] = [];
+}
+for (row = 0; row < m; row += 1) {
+    matrix[row] = (gets()).split(' ').map(Number);
+}
+let check = [];
+let counters = [];
+
+for (col = 0; col < m; col += 1) {
+    for (row = 0; row < n; row += 1) {
+        check.push(matrix[row][col]);
+    }
+    let res = check.filter((x, i) => x == check[i + 1]);
+    let count = res.length + 1;
+    counters.push(count);
+    check = [];
+}
+for (row = 0; row < m; row += 1) {
+    for (col = 0; col < n; col += 1) {
+        check.push(matrix[row][col]);
+    }
+    let res = check.filter((x, i) => x == check[i + 1]);
+    let count = res.length + 1;
+    counters.push(count);
+    check = [];
+}
+for (row = 0, col = 0; row < n, col < m; row += 1, col += 1) {
+    check.push(matrix[row][col]);
+
+}
+let res = check.filter((x, i) => x == check[i + 1]);
+let count = res.length + 1;
+counters.push(count);
+check = [];
+
+
+for (row = 0, col = m - 1; row < n, col >= 0; row += 1, col -= 1) {
+    check.push(matrix[row][col]);
+}
+res = check.filter((x, i) => x == check[i + 1]);
+count = res.length + 1;
+counters.push(count);
+check = [];
+print(Math.max(...counters));
