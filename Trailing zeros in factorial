@@ -1,0 +1,8 @@
+let count=0;
+const modFive = (x) => {
+    for (let i = 5; x / i > 1; i *= 5) {
+        count += Math.floor(x / i);
+           }
+    return count;
+}
+print(modFive(+gets()));
