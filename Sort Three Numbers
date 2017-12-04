@@ -1,0 +1,46 @@
+/*
+Write a program that enters 3 real numbers and prints them sorted in descending order.
+
+    Use nested if statements.
+    _Don’t use arrays and the built-in sorting functionality._
+
+
+*/
+
+let a = +gets();
+let b = +gets();
+let c = +gets();
+if (a != b && a != c && b != c) {
+    if ((a < b && a < c) && (b < c)) {
+        print(c + ' ' + b + ' ' + a)
+    }
+    if ((a < b && a < c) && (b > c)) {
+        print(b + ' ' + c + ' ' + a)
+    }
+    if ((b < a && b < c) && (a < c)) {
+        print(c + ' ' + a + ' ' + b)
+    }
+    if ((b < a && b < c) && (a > c)) {
+        print(a + ' ' + c + ' ' + b)
+    }
+    if ((c < a && c < b) && (a > b)) {
+        print(a + ' ' + b + ' ' + c)
+    }
+    if ((c < a && c < b) && (a < b)) {
+        print(b + ' ' + a + ' ' + c)
+    }
+} else if (a == b && b < c) {
+    print(c + ' ' + b + ' ' + a);
+} else if (a == b && b > c) {
+    print(a + ' ' + b + ' ' + c);
+} else if (a == c && b > c) {
+    print(b + ' ' + a + ' ' + c);
+} else if (a == c && b < c) {
+    print(c + ' ' + a + ' ' + b);
+} else if (b == c && a < c) {
+    print(c + ' ' + b + ' ' + a);
+} else if (b == c && a > c) {
+    print(a + ' ' + b + ' ' + c);
+} else if (a == b && b == c) {
+    print(a + ' ' + b + ' ' + c);
+}
