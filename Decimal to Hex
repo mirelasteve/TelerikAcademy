@@ -1,0 +1,14 @@
+numb=+gets();
+const toHex=(d)=> {
+  var r = d % 16;
+  if (d - r == 0) {
+    return toChar(r);
+  }
+  return toHex( (d - r)/16 ) + toChar(r);
+}
+
+function toChar(n) {
+  const alpha = "0123456789ABCDEF";
+  return alpha.charAt(n);
+}
+print(toHex(numb));
