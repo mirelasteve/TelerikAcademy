@@ -1,0 +1,49 @@
+/*
+You are given a number N.
+
+You can perform 3 operations with N:
+
+    Didive it by 2
+        Only available if N is even
+    Increment by 1
+    Decrement by 1
+
+You task is to calculate the minumum count of operations, the can make N equal to 1
+
+*/
+
+let n = +gets();
+let count = 0;
+const divTwo = (x) => {
+    count += 1;
+    return x / 2;
+
+};
+while (n >= 1) {
+    if (n == 1) {
+        break;
+    }
+    if (n % 2 != 0) {
+        let checkMinus = (n - 1) / 2;
+        let checkPlus = (n + 1) / 2;
+        count += 2;
+
+        if (checkMinus % 2 == 0) {
+            n = divTwo(checkMinus);
+        }
+        if (n == 1) {
+            break;
+        }
+        if (checkPlus % 2 == 0) {
+            n = divTwo(checkPlus);
+        }
+        if (n == 1) {
+            break;
+        }
+    }
+    if (n % 2 == 0) {
+        count += 1;
+        n = n / 2;
+    }
+}
+print(count);
