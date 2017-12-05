@@ -17,7 +17,6 @@ let count = 0;
 const divTwo = (x) => {
     count += 1;
     return x / 2;
-
 };
 while (n >= 1) {
     if (n == 1) {
@@ -26,6 +25,10 @@ while (n >= 1) {
     if (n % 2 != 0) {
         let checkMinus = (n - 1) / 2;
         let checkPlus = (n + 1) / 2;
+        if (checkMinus == 1 || checkPlus == 1) {
+            count += 2;
+            break;
+        }
         count += 2;
 
         if (checkMinus % 2 == 0) {
