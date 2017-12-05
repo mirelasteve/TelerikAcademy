@@ -1,0 +1,24 @@
+let n = (((gets()).split('')).reverse());
+let hex = 0;
+for (let i = 0; i < n.length; i += 1) {
+    if (n[i] == 'A') {
+        n[i] = 10;
+    }
+    if (n[i] == 'B') {
+        n[i] = 11;
+    }
+    if (n[i] == 'C') {
+        n[i] = 12;
+    }
+    if (n[i] == 'D') {
+        n[i] = 13;
+    }
+    if (n[i] == 'E') {
+        n[i] = 14;
+    }
+    if (n[i] == 'F') {
+        n[i] = 15;
+    }
+    hex += n[i] * 16 ** i;
+}
+print(hex);
