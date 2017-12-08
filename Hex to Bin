@@ -1,0 +1,65 @@
+let hex = gets().split('');
+const rev = ['1010', '1011', '1100', '1101', '1110', '1111'];
+let result = '';
+for (let i = 0; i < hex.length; i += 1) {
+    hex[i] = hex[i].toUpperCase();
+    if (hex[i].charCodeAt(0) == '0'.charCodeAt(0)) {
+        result += '0000';
+    }
+    if (hex[i].charCodeAt(0) == '1'.charCodeAt(0)) {
+        result += '0001';
+    }
+    if (hex[i].charCodeAt(0) == '2'.charCodeAt(0)) {
+        result += '0010';
+    }
+    if (hex[i].charCodeAt(0) == '3'.charCodeAt(0)) {
+        result += '0011';
+    }
+    if (hex[i].charCodeAt(0) == '4'.charCodeAt(0)) {
+        result += '0100';
+    }
+    if (hex[i].charCodeAt(0) == '5'.charCodeAt(0)) {
+        result += '0101';
+    }
+    if (hex[i].charCodeAt(0) == '6'.charCodeAt(0)) {
+        result += '0110';
+    }
+    if (hex[i].charCodeAt(0) == '7'.charCodeAt(0)) {
+        result += '0111';
+    }
+    if (hex[i].charCodeAt(0) == '8'.charCodeAt(0)) {
+        result += '1000';
+    }
+    if (hex[i].charCodeAt(0) == '9'.charCodeAt(0)) {
+        result += '1001';
+    }
+    if (hex[i].charCodeAt(0) == 'A'.charCodeAt(0)) {
+        result += rev[0];
+    }
+    if (hex[i].charCodeAt(0) == 'B'.charCodeAt(0)) {
+        result += rev[1];
+    }
+    if (hex[i].charCodeAt(0) == 'C'.charCodeAt(0)) {
+        result += rev[2];
+    }
+    if (hex[i].charCodeAt(0) == 'D'.charCodeAt(0)) {
+        result += rev[3];
+    }
+    if (hex[i].charCodeAt(0) == 'E'.charCodeAt(0)) {
+        result += rev[4];
+    }
+    if (hex[i].charCodeAt(0) == 'F'.charCodeAt(0)) {
+        result += rev[5];
+    }
+}
+result = result.split('');
+for (let i = 0; i < result.length; i += 1) {
+
+    if (result[i] == '0') {
+        result[i] = '';
+    }
+    if (result[i] != '0' && result[i] != '') {
+        break;
+    }
+}
+print(result.join('').trim());
