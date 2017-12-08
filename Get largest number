@@ -1,0 +1,8 @@
+let datas = gets().split(' ');
+let x = datas[0];
+let y = datas[1];
+let c = datas[2];
+const getMax = (a, b) => {
+    return Math.max(a, b, c);
+};
+print(getMax(x, y));
