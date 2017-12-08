@@ -1,0 +1,30 @@
+let a=+gets();
+let b=+gets();
+let c=+gets();
+if(a<0&&b>0&&c>0){
+    print('-');
+}
+if(a>0&&b<0&&c>0){
+    print('-');
+}
+if(a>0&&b>0&&c<0){
+    print('-');
+}
+if(a<0&&b<0&&c>0){
+    print('+');
+}
+if(a<0&&b>0&&c<0){
+    print('+');
+}
+if(a>0&&b<0&&c<0){
+    print('+');
+}
+if(a<0&&b<0&&c<0){
+    print('-');
+}
+if(a==0||b==0||c==0){
+    print('0');
+}
+if(a>0&&b>0&&c>0){
+    print('+');
+}
