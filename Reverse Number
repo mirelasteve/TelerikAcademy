@@ -1,0 +1,7 @@
+Write a method that reverses the digits of a given decimal number.
+
+
+let n = gets();
+ n = n.toString().split('');
+ n = n.reverse().join('');
+ print(n);
