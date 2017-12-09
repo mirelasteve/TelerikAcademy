@@ -7,3 +7,20 @@ We are given the following sequence:
     S5 = S2 + 1;
     S6 = 2*S2 + 1;
     S7 = S2 + 2;
+    
+    let datas = gets().split(' ');
+let n = datas[0] * 1;
+let m = datas[1] * 1;
+let res = '';
+let arr = [];
+for (let i = 0; i <= m; i += 2) {
+    arr[i] = n + i;
+    res += arr[i] + ',';
+    arr[i + 1] = arr[i] + 1;
+    res += arr[i + 1] + ',';
+    arr[i + 2] = 2 * n + (i + 1);
+    res += arr[i + 2] + ',';
+}
+res = res.split(',');
+print(res[m - 1]);
+
