@@ -1,0 +1,34 @@
+/*Write a method that adds two positive integer numbers represented as arrays of digits 
+(each array element arr[i] contains a digit;
+the last digit is kept in arr[0]). Write a program that reads two arrays
+representing positive integers and outputs their sum.*/
+
+
+let lens = gets().split(' ');
+let len1 = lens[0];
+let len2 = lens[1];
+let maxLen = Math.max(len1, len2);
+let arr1 = gets().split(' ').map(Number);
+let arr2 = gets().split(' ').map(Number);
+let result = [];
+let number = 0;
+for (let i = 0; i < maxLen; i += 1) {
+
+    if (typeof(arr1[i]) == 'undefined') {
+        arr1[i] = 0;
+    }
+    if (typeof(arr2[i]) == 'undefined') {
+        arr2[i] = 0;
+    }
+    number += arr1[i] + arr2[i];
+    if (number <= 9) {
+        result.push(number);
+        number = 0;
+    }
+    if (number > 9) {
+        number = number % 10;
+        result.push(number);
+        number = 1;
+    }
+}
+print(result.join(' ').split(','));
