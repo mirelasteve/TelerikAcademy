@@ -1,0 +1,14 @@
+const size = +gets();
+let counter = 0;
+let arr = gets().split(' ').map(Number);
+for (let i = 0; i < size - 1; i += 1) {
+    if (arr[i + 1] > arr[i] && arr[i + 1] > arr[i + 2]) {
+        print(i + 1);
+        break;
+    } else {
+        counter += 1;
+    }
+}
+if (counter == size - 1) {
+    print(-1);
+}
