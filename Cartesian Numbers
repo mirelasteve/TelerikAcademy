@@ -1,0 +1,29 @@
+let x = +gets();
+let y = +gets();
+if (x == 0 && y == 0) {
+    print(0);
+}
+if (x == 0 && y > 0) {
+    print(5);
+}
+if (x == 0 && y < 0) {
+    print(5);
+}
+if (x > 0 && y == 0) {
+    print(6);
+}
+if (x < 0 && y == 0) {
+    print(6);
+}
+if (x < 0 && y > 0) {
+    print(2);
+}
+if (x < 0 && y < 0) {
+    print(3);
+}
+if (x > 0 && y < 0) {
+    print(4);
+}
+if (x > 0 && y > 0) {
+    print(1);
+}
