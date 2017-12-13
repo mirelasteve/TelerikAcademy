@@ -15,7 +15,18 @@ solve in which order all Jedi will mediate.
 
 */
 
+// Submission with RegEx
+let m = +gets();
+let jedi = gets();
+let p = (jedi.match(/P\d*/g)).join(' ');
+let k = (jedi.match(/K\d*/g)).join(' ');
+let Mm = (jedi.match(/M\d*/g)).join(' ');
+print(Mm + ' ' + k + ' ' + p);
+quit(0);
 
+
+
+// With arrays
 let m = +gets();
 let M = [];
 
