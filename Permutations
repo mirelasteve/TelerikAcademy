@@ -1,3 +1,27 @@
+/* With Recursion*/
+const n = +gets();
+let per = [];
+let us = [];
+const printPermutation = (n, index, permutation, used) => {
+    if (index === n) {
+        print(permutation.join(' '));
+        return;
+    }
+    for (let i = 0; i < n; i++) {
+        if (used[i]) {
+            continue;
+        }
+        permutation[index] = i + 1;
+        used[i] = true;
+        printPermutation(n, index + 1, permutation, used);
+        used[i] = false;
+    }
+}
+printPermutation(n, 0, per, us);
+quit(0);
+
+/*Without recursion*/
+
 let n = +gets();
 let arr = [];
 for (let i = 1; i <= n; i += 1) {
