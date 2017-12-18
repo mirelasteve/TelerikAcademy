@@ -1,26 +1,26 @@
-let permArr = [];
-let usedChars = [];
 const n = +gets();
-let arr = [];
-let prev = gets(); //.split(' ').map(Number)
-for (let j = 1; j <= n; j += 1) {
-    arr.push(j);
-}
-
-function permute(input) {
-    let i, ch;
-    for (i = 0; i < input.length; i++) {
-        ch = input.splice(i, 1)[0];
-        usedChars.push(ch);
-        if (input.length == 0) {
-            permArr.push(usedChars.slice());
+let per = [];
+let us = [];
+let res = [];
+let j = 0;
+const element = gets();
+const printPermutation = (n, index, permutation, used, res) => {
+    if (index === n) {
+        res[j] = permutation.join(' ');
+        if (res[j - 1] == element) {
+            print(res[j]);
         }
-        permute(input);
-        input.splice(i, 0, ch);
-        usedChars.pop();
+        j = j + 1;
+        return;
     }
-    return permArr;
-};
-let t = permute(arr);
-let findI = (t.findIndex((x) => x.join(' ') == prev));
-print((t[findI + 1]).join(' '));
+    for (let i = 0; i < n; i++) {
+        if (used[i]) {
+            continue;
+        }
+        permutation[index] = i + 1;
+        used[i] = true;
+        printPermutation(n, index + 1, permutation, used, res);
+        used[i] = false;
+    }
+}
+printPermutation(n, 0, per, us, res);
